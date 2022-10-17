@@ -13,7 +13,7 @@ export const getTasks = async (req, res) => {
 
 export const getTask = async (req, res) => {
     try {
-        const [result] = await pool.query("SELECT * FROM usuario WHERE id = ?", [
+        const [result] = await pool.query("SELECT * FROM usuario WHERE idUsuario = ?", [
             req.params.id,
         ]);
 
