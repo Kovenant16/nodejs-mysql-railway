@@ -1,21 +1,21 @@
 import axios from "axios";
 
 export const getTasksRequest = async () =>
-     await axios.get("http://localhost:4000/tasks");
+     await axios.get("https://nodejs-mysql-railway-production-07cd.up.railway.app/tasks");
 
 export const createTaskRequest = async (task) =>
-     await axios.post("http://localhost:4000/tasks", task);
+     await axios.post("https://nodejs-mysql-railway-production-07cd.up.railway.app/tasks", task);
 
 export const deleteTaskRequest = async (id) =>
-     await axios.delete(`http://localhost:4000/tasks/${id}`);
+     await axios.delete(`https://nodejs-mysql-railway-production-07cd.up.railway.app/tasks/${id}`);
 
 export const getTaskRequest = async (id) =>
-     await axios.get(`http://localhost:4000/tasks/${id}`);
+     await axios.get(`https://nodejs-mysql-railway-production-07cd.up.railway.app/tasks/${id}`);
 
 export const updateTaskRequest = async (id, newFields) =>
-     await axios.put(`http://localhost:4000/tasks/${id}`, newFields);
+     await axios.put(`https://nodejs-mysql-railway-production-07cd.up.railway.app/tasks/${id}`, newFields);
 
 export const toggleDoneRequest = async (id, done) =>
-     await axios.put(`http://localhost:4000/tasks/${id}`,{
+     await axios.put(`https://nodejs-mysql-railway-production-07cd.up.railway.app/tasks/${id}`,{
           done,
      });
