@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import { 
-    getTasks,
+    getProductos,
     createTask,
     deleteTask,
     updateTask,
@@ -9,7 +9,7 @@ import {
 const router = Router();
 
 
-router.get('/tasks', getTasks);
+router.get('/tasks', getProductos);
 
 router.get('/tasks/:id', getTask);
 

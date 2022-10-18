@@ -1,9 +1,9 @@
 import { pool } from "../db.js";
 
-export const getTasks = async (req, res) => {
+export const getProductos = async (req, res) => {
     try {
         const [result] = await pool.query(
-            "SELECT * FROM usuario ORDER BY idUsuario ASC"
+            "SELECT * FROM producto"
         );
         res.json(result);
     } catch (error) {
