@@ -11,6 +11,17 @@ export const getProductos = async (req, res) => {
     }
 };
 
+export const getLocales = async (req, res) => {
+    try {
+        const [result] = await pool.query(
+            "SELECT * FROM tienda"
+        );
+        res.json(result);
+    } catch (error) {
+        return res.status(500).json({ message: error.message });
+    }
+};
+
 export const getTask = async (req, res) => {
     try {
         const [result] = await pool.query("SELECT * FROM usuario WHERE idUsuario = ?", [
