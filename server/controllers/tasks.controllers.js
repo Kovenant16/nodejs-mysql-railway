@@ -14,7 +14,7 @@ export const getProductos = async (req, res) => {
 export const getLocales = async (req, res) => {
     try {
         const [result] = await pool.query(
-            "SELECT * FROM tienda"
+            "select *,tl.nombre as nombretipolocal from  tienda t,tipolocal tl where t.idTipoLocal = tl.idTipoLocal "
         );
         res.json(result);
     } catch (error) {
