@@ -9,7 +9,7 @@ import {
 const router = Router();
 
 
-router.get('/tasks', getProductos);
+router.get('/productos', getProductos);
 
 router.get('/tasks/:id', getTask);
 
