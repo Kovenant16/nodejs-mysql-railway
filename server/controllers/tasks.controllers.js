@@ -24,7 +24,7 @@ export const getLocales = async (req, res) => {
 
 export const getTask = async (req, res) => {
     try {
-        const [result] = await pool.query("select * from producto P left join tienda T on P.idTienda = idTienda where T.nombreTienda = ?", [
+        const [result] = await pool.query("select * from producto P left join tienda T on P.idTienda = T.idTienda where T.nombreTienda = ?", [
             req.params.nombreTienda,
         ]);
 
