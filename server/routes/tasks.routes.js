@@ -5,7 +5,8 @@ import {
     createTask,
     deleteTask,
     updateTask,
-    getTask} from '../controllers/tasks.controllers.js'
+    getTask,
+getCategories} from '../controllers/tasks.controllers.js'
 
 const router = Router();
 
@@ -16,7 +17,7 @@ router.get('/locales', getLocales);
 
 router.get('/tasks/:nombreTienda', getTask);
 
-router.get('/categorias/:nombreTienda')
+router.get('/categorias/:nombreTienda', getCategories)
 
 router.post('/tasks', createTask);
 
