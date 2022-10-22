@@ -37,6 +37,21 @@ export const getTask = async (req, res) => {
     }
 };
 
+export const getCategories = async (req, res) => {
+    try {
+        const [result] = await pool.query("SELECT p.idTipoProducto, tp.nombreTipoProducto FROM producto p, tipoproducto tp, tienda t WHERE t.nombreTienda = ? AND  tp.idTipoProducto = p.idTipoProducto AND p.idTienda = t.idTienda group by idTipoProducto", [
+            req.params.nombreTienda,
+        ]);
+
+        if (result.length === 0)
+            return res.status(404).json({ message: "Task not found" });
+
+        res.json(result);
+    } catch (error) {
+        return res.status(500).json({ message: error.message });
+    }
+};
+
 export const createTask = async (req, res) => {
     try {
         const { title, description } = req.body;

@@ -16,6 +16,8 @@ router.get('/locales', getLocales);
 
 router.get('/tasks/:nombreTienda', getTask);
 
+router.get('/categorias/:nombreTienda')
+
 router.post('/tasks', createTask);
 
 router.put('/tasks/:id', updateTask);
