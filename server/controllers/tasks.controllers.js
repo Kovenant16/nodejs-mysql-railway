@@ -95,3 +95,21 @@ export const deleteTask = async (req, res) => {
         return res.status(500).json({ message: error.message });
     }
 };
+
+export const crearTipoProducto = async (req, res) => {
+    try {
+        const { nombreTipoProducto, descripcionTipoProducto, urlImagenTipoProducto} = req.body;
+        const [result] = await pool.query(
+            "INSERT INTO tipoproducto(nombreTipoProducto, descripcionTipoProducto, urlImagenTipoProducto) VALUES (?, ?,?,?)",
+            [nombreTipoProducto, descripcionTipoProducto, urlImagenTipoProducto]
+        );
+        res.json({
+            id: result.insertId,
+            nombreTipoProducto,
+            descripcionTipoProducto,
+            urlImagenTipoProducto
+        });
+    } catch (error) {
+        return res.status(500).json({ message: error.message });
+    }
+};

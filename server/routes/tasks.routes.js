@@ -6,7 +6,8 @@ import {
     deleteTask,
     updateTask,
     getTask,
-getCategories} from '../controllers/tasks.controllers.js'
+getCategories,
+crearTipoProducto} from '../controllers/tasks.controllers.js'
 
 const router = Router();
 
@@ -24,6 +25,8 @@ router.post('/tasks', createTask);
 router.put('/tasks/:id', updateTask);
 
 router.delete('/tasks/:id', deleteTask);
+
+router.post('/create/tipoproducto', crearTipoProducto);
 
 
 
