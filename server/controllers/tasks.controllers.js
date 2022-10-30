@@ -100,7 +100,7 @@ export const crearTipoProducto = async (req, res) => {
     try {
         const { nombreTipoProducto, descripcionTipoProducto, urlImagenTipoProducto} = req.body;
         const [result] = await pool.query(
-            "INSERT INTO tipoproducto(nombreTipoProducto, descripcionTipoProducto, urlImagenTipoProducto) VALUES (?, ?,?,?)",
+            "INSERT INTO tipoproducto(nombreTipoProducto, descripcionTipoProducto, urlImagenTipoProducto) VALUES (?, ?, ?)",
             [nombreTipoProducto, descripcionTipoProducto, urlImagenTipoProducto]
         );
         res.json({

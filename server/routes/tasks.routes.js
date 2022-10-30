@@ -30,8 +30,6 @@ router.delete('/tasks/:id', deleteTask);
 
 router.post('/create/tipoproducto', crearTipoProducto);
 
-router.post('/producto/:idProducto', crearTipoProducto);
-
 router.get('/producto/:idProducto', getProducto);
 
 router.get('/tipoProducto/:idTipoProducto', getTipoProducto);
