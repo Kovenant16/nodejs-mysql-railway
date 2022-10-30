@@ -8,7 +8,8 @@ import {
     getTask,
 getCategories,
 crearTipoProducto,
-getProducto} from '../controllers/tasks.controllers.js'
+getProducto,
+getTipoProducto} from '../controllers/tasks.controllers.js'
 
 const router = Router();
 
@@ -32,6 +33,8 @@ router.post('/create/tipoproducto', crearTipoProducto);
 router.post('/producto/:idProducto', crearTipoProducto);
 
 router.get('/producto/:idProducto', getProducto);
+
+router.get('/tipoProducto/:idTipoProducto', getTipoProducto);
 
 
 

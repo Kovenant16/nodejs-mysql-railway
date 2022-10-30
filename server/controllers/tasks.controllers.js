@@ -129,3 +129,19 @@ export const getProducto = async (req, res) => {
         return res.status(500).json({ message: error.message });
     }
 };
+
+export const getTipoProducto = async (req, res) => {
+    try {
+        const [result] = await pool.query("select * from tipoproducto where idTipoProducto = 1"
+            , [
+            req.params.idTipoProducto,
+        ]);
+
+        if (result.length === 0)
+            return res.status(404).json({ message: "tipo de Producto no encontrado" });
+
+        res.json(result);
+    } catch (error) {
+        return res.status(500).json({ message: error.message });
+    }
+};
