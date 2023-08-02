@@ -1,42 +1,22 @@
-import { Router } from 'express'
-import { 
-    getProductos,
-    getLocales,
-    createTask,
-    deleteTask,
-    updateTask,
-    getTask,
-getCategories,
-crearTipoProducto,
-getProducto,
-getTipoProducto} from '../controllers/tasks.controllers.js'
+import { Router } from "express";
+import {
+  getTasks,
+  getTask,
+  createTask,
+  deleteTask,
+  updateTask,
+} from "../controllers/tasks.controllers.js";
 
 const router = Router();
 
+router.get("/tasks", getTasks);
 
-router.get('/productos', getProductos);
+router.get("/tasks/:id", getTask);
 
-router.get('/locales', getLocales);
+router.post("/tasks", createTask);
 
-router.get('/tasks/:nombreTienda', getTask);
+router.put("/tasks/:id", updateTask);
 
-router.get('/categorias/:nombreTienda', getCategories)
-
-router.post('/tasks', createTask);
-
-router.put('/tasks/:id', updateTask);
-
-router.delete('/tasks/:id', deleteTask);
-
-router.post('/create/tipoproducto', crearTipoProducto);
-
-router.get('/producto/:idProducto', getProducto);
-
-router.get('/tipoProducto/:idTipoProducto', getTipoProducto);
-
-
-
-
-
+router.delete("/tasks/:id", deleteTask);
 
 export default router;

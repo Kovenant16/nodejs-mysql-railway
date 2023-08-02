@@ -6,6 +6,8 @@ const TasksPage = () => {
 
   const {tasks, loadTasks} = useTasks()
 
+  console.log(tasks)
+
 
 
   useEffect(() => {
